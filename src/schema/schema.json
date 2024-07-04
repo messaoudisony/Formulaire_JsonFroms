@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "nom": {
+      "title": "Votre nom",
+      "type": "string",
+      "minLength": 1
+    },
+    "continent": {
+      "title": "Votre continent",
+      "type": "string",
+      "enum": ["Afrique", "Amérique du Nord", "Amérique du Sud", "Asie", "Europe", "Océanie"]
+    },
+    "pays": {
+      "title": "Votre pays",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": ["nom"]
+}
