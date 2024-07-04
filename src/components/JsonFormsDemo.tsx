@@ -13,6 +13,9 @@ import uischema from '../schema/uischema.json';
 import MultiSelect from './multiSelect/MultiSelect';
 import multiSelectTester from './multiSelect/multiSelectTester';
 
+import {  JsonFormsRendererRegistryEntry } from '@jsonforms/core';
+
+
 const classes = {
   container: {
     padding: '1em',
@@ -51,7 +54,7 @@ const initialData: IData = {
   pays: []
 };
 
-const renderers = [
+const renderers : JsonFormsRendererRegistryEntry[]  = [
   ...materialRenderers,
   { tester: multiSelectTester, renderer: MultiSelect }
 ];

@@ -1,9 +1,23 @@
-const multiSelectTester = (uischema: { scope: string; }, schema: { type: string; items: { type: string; }; }) => {
+import { RankedTester, UISchemaElement, JsonSchema } from '@jsonforms/core';
+
+const multiSelectTester: RankedTester = (
+  uischema: UISchemaElement,
+  schema: JsonSchema,
+  // context: TesterContext
+) => {
   if (
-    uischema.scope &&
+    uischema &&
+    typeof uischema === 'object' &&
+    'scope' in uischema &&
+    typeof uischema.scope === 'string' &&
     uischema.scope.endsWith('pays') &&
+    schema &&
+    typeof schema === 'object' &&
+    'type' in schema &&
     schema.type === 'array' &&
     schema.items &&
+    typeof schema.items === 'object' &&
+    'type' in schema.items &&
     schema.items.type === 'string'
   ) {
     return 10;
