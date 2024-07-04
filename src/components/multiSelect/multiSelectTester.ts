@@ -3,7 +3,6 @@ import { RankedTester, UISchemaElement, JsonSchema } from '@jsonforms/core';
 const multiSelectTester: RankedTester = (
   uischema: UISchemaElement,
   schema: JsonSchema,
-  // context: TesterContext
 ) => {
   if (
     uischema &&
